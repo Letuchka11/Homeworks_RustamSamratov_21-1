@@ -1,0 +1,22 @@
+class Company:
+    def __init__(self, Company_bank , Company_name):
+        self.bankir = Company_bank
+        self.name = Company_name
+
+class Person(Company):
+    def __init__(self, first_name , last_name , salary , Company_bank, Company_name):
+        super().__init__(Company_bank, Company_name)
+        self.Imya = first_name
+        self.familiya = last_name
+        self.zarik = salary
+
+    def get_salary(self):
+        if self.bankir < 10:
+            print("Денег нет , но вы держитесь!")
+        else:
+            self.bankir -= self.zarik
+
+    def person_info(self):
+        print(f"Имя сотрудника: {self.Imya} \nФамилия сотрудника: {self.familiya} \nЗарплата: {self.zarik}")
+Dude = Person("Alesha", "Aleshev" , 100 , 200 , "Cunning Jew")
+Dude.person_info()
