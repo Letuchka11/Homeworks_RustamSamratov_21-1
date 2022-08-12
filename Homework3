@@ -1,0 +1,31 @@
+class Fraction:
+    def __init__(self, numertor, denumerator):
+        self.numertor = numertor
+        self.denumerator = denumerator
+
+    def __add__(self, other):
+        znam =  self.denumerator * other.denumerator
+        chisl = self.denumerator * other.numertor + other.denumerator * self.numertor
+
+        return f"{chisl}/ {znam}"
+
+    def __sub__(self, other):
+        znam = self.denumerator * other.denumerator
+        chisl = other.denumerator * self.numertor - self.denumerator * other.numertor
+        return f"{chisl}/{znam}"
+
+    def __mul__(self, other):
+        znam = self.denumerator * other.denumerator
+        chisl = self.numertor * other.numertor
+        return f"{chisl}/{znam}"
+
+    def __floordiv__(self, other):
+        znam = self.denumerator * other.numertor
+        chisl = other.denumerator * self.numertor
+        return f"{chisl}/{znam}"
+
+
+num1 = Fraction(2,3)
+num2 = Fraction(4,5)
+
+print(num1 // num2)
